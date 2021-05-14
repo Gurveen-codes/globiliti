@@ -57,11 +57,42 @@ const registerUser = asyncHandler(async (req, res) => {
 // @desc Get user by ID
 // @route GET /api/users/:id
 // @access Private
-const getUserById = asyncHandler(async (req, res) => {})
+const getUserById = asyncHandler(async (req, res) => {
+	const user = await User.findById(req.params.id).select('-password')
+	if (user) {
+		res.status(200)
+		res.json(user)
+	} else {
+		res.status(404)
+		throw new Error('User not found')
+	}
+})
 
 // @desc   Update user by ID
 // @route  PUT /api/users/:id
 // @access Private
-const updateUserById = asyncHandler(async (req, res) => {})
+const updateUserById = asyncHandler(async (req, res) => {
+	const user = await User.findById(req.params.id)
+	if (user) {
+		user.firstName = req.body.firstName || user.firstName
+		user.lastName = req.body.lastName || user.lastName
+		user.email = req.body.email || user.email
+		user.userName = `${req.body.firstName || user.firstName} ${
+			req.body.lastName || user.lastName
+		}`
+		const updatedUser = await user.save()
+
+		res.json({
+			_id: updatedUser._id,
+			email: updatedUser.email,
+			firstName: updatedUser.firstName,
+			lastName: updatedUser.lastName,
+			userName: updatedUser.userName,
+		})
+	} else {
+		res.status(404)
+		throw new Error('User Not Found')
+	}
+})
 
 export { loginUser, registerUser, getUserById, updateUserById }
