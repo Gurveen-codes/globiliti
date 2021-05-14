@@ -19,7 +19,8 @@ connectDB()
 process.env.NODE_ENV === 'development' && app.use(morgan('dev'))
 //Accept form data in request body
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.json()) ///Accept json data in req body
+///Accept json data in req body
+app.use(express.json()) 
 
 //User routes
 app.use('/api/users', userRoutes)
