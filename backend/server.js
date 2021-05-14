@@ -2,7 +2,9 @@ import express from 'express'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
 import bodyParser from 'body-parser'
+
 import connectDB from './config/db.js'
+import errorHandler from './middleware/errorMiddleware.js'
 
 //use environmental variables
 dotenv.config()
@@ -21,6 +23,9 @@ app.use(express.json()) ///Accept json data in req body
 app.get('/', (req, res) => {
 	res.send('Backend API is running')
 })
+
+//Middleware to catch all errors
+app.use(errorHandler)
 
 app.listen(
 	process.env.PORT || 5000,
