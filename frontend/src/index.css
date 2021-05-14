@@ -16,7 +16,7 @@ body {
 	height: max-content;
 	display: grid;
 	grid-template-columns: 0.4fr 0.6fr;
-	grid-template-rows: min-content 1fr;
+	grid-template-rows: min-content min-content;
 	margin-left: 3rem;
 	margin-top: 1rem;
 }
@@ -45,7 +45,7 @@ body {
 .form-container .banner-img .banner-right-img {
 	position: absolute;
 	top: 400px;
-	left: 100%;
+	left: 90%;
 	transform: translateX(-50%);
 	z-index: -1;
 }
@@ -74,6 +74,7 @@ body {
 	border-bottom: 2px solid #9ca6af;
 	display: inline-block;
 	width: 70%;
+	max-width: 350px;
 	padding: 0.5em;
 	font-size: 1.125rem;
 }

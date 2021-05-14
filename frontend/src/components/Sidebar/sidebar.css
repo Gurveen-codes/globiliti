@@ -1,0 +1,71 @@
+.sidebar {
+	background-color: #131a34;
+	color: #c2c6d9;
+
+	padding: 0.75rem;
+	min-height: 100vh;
+	position: relative;
+}
+.sidebar ul {
+	list-style: none;
+}
+.sidebar .sidebar-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+.sidebar .sidebar-title img {
+	max-width: 70%;
+}
+
+.sidebar .sidebar-menu {
+	margin-top: 2em;
+	font-size: 1.125rem;
+	border-bottom: 1px solid #323c61;
+}
+
+.sidebar .sidebar-menu .sidebar-menu-item {
+	margin: 0.5em;
+	cursor: pointer;
+}
+.sidebar .sidebar-team-list {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+.sidebar .sidebar-team-list .team-list-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.sidebar .sidebar-team-list ul {
+	margin-top: 1rem;
+}
+.sidebar .sidebar-team-list .sidebar-team-item {
+	display: flex;
+	align-items: center;
+	margin-top: 1em;
+	cursor: pointer;
+}
+
+.sidebar-team-item .user-detail {
+	margin-left: 0.75em;
+}
+.sidebar-team-item .user-detail .user-name {
+	font-size: 1.125rem;
+}
+
+.sidebar-footer {
+	width: calc(100% - 1.5em);
+	font-size: 1.125rem;
+	border-top: 1px solid #323c61;
+	position: absolute;
+	bottom: 0.75em;
+	left: 0.75em;
+	z-index: 10;
+}
+
+.sidebar-footer-item {
+	cursor: pointer;
+	margin-top: 0.5em;
+}

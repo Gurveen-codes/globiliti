@@ -1,0 +1,15 @@
+.dashboard {
+	font-size: 14px;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.sidebar {
+	grid-column: 1 / 2;
+}
+
+.navbar {
+	grid-column: 2 / -1;
+	border: 2px solid green;
+}
