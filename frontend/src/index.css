@@ -1,8 +1,100 @@
-body {
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
 	margin: 0;
+	padding: 0;
+}
+body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-size: 16px;
+}
+
+.form-container {
+	height: max-content;
+	display: grid;
+	grid-template-columns: 0.4fr 0.6fr;
+	grid-template-rows: min-content 1fr;
+	margin-left: 3rem;
+	margin-top: 1rem;
+}
+
+.form-container .title-img {
+	grid-column: 1/-1;
+}
+
+.form-container .banner-img {
+	grid-column: 2/3;
+	grid-row: 2/3;
+	position: relative;
+}
+
+.form-container .banner-img img {
+	display: block;
+}
+
+.form-container .banner-img .banner-left-img {
+	position: absolute;
+	top: 500px;
+	left: 0;
+	transform: translateX(-50%);
+}
+
+.form-container .banner-img .banner-right-img {
+	position: absolute;
+	top: 400px;
+	left: 100%;
+	transform: translateX(-50%);
+	z-index: -1;
+}
+.form-container .form-content {
+	margin-top: 2rem;
+}
+.form-container .form-content label {
+	display: block;
+	margin: 0.35em;
+	font-weight: 600;
+	font-size: 1.125rem;
+}
+.form-container .form-content .form-desc {
+	margin-top: 0.5rem;
+	margin-bottom: 2rem;
+	font-size: 1.125rem;
+	color: #919194;
+}
+.form-container .form-content .input-item {
+	margin: 1rem 0;
+}
+
+.form-container .form-content input:not(input[type='submit']) {
+	border: none;
+	background-color: #f6f8f9;
+	border-bottom: 2px solid #9ca6af;
+	display: inline-block;
+	width: 70%;
+	padding: 0.5em;
+	font-size: 1.125rem;
+}
+
+.form-content input:focus {
+	outline: none;
+}
+
+.form-content input[type='submit'] {
+	display: inline-block;
+	background-color: #192451;
+	cursor: pointer;
+	color: #ffffff;
+	padding: 0.25em 1.25em;
+	line-height: 24px;
+	font-size: 16px;
+	text-transform: uppercase;
+	border-radius: 5px;
+	margin-top: 1em;
+	text-align: center;
+	border: 1.25px solid #39494c59;
 }

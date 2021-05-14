@@ -1,36 +1,34 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Input from '../components/Input'
+import FormContainer from '../components/FormContainer'
 
 const RegisterScreen = () => {
 	const [inputFields, setInputFields] = useState({
-		firstName: {
+		userName: {
 			type: 'text',
 			value: '',
-			placeholder: 'First Name',
-			required: true,
-		},
-		lastName: {
-			type: 'text',
-			value: '',
-			placeholder: 'Last Name',
+			placeholder: 'Your Name',
+			label: "What's your full name?",
 			required: true,
 		},
 		email: {
 			type: 'email',
 			value: '',
 			placeholder: 'Email Address',
+			label: 'Email',
 			required: true,
 		},
 		password: {
 			type: 'password',
 			value: '',
 			placeholder: 'Password',
+			label: 'Password',
 			required: true,
 		},
 		submit: {
 			type: 'submit',
-			value: 'Register',
+			value: 'Create Account',
 		},
 	})
 
@@ -51,8 +49,7 @@ const RegisterScreen = () => {
 	const submitHandler = (e) => {
 		e.preventDefault()
 		const formData = {
-			firstName: inputFields.firstName.value,
-			lastName: inputFields.lastName.value,
+			userName: inputFields.userName.value,
 			email: inputFields.email.value,
 			password: inputFields.password.value,
 		}
@@ -67,20 +64,27 @@ const RegisterScreen = () => {
 		inputArray.push({ id: key, config: inputFields[key] })
 	}
 	return (
-		<form onSubmit={submitHandler}>
-			{inputArray.map((input) => (
-				<Input
-					key={input.id}
-					id={input.id}
-					name={input.id}
-					onChange={(e) => inputChangeHandler(e, input.id)}
-					placeholder={input.config.placeholder}
-					required={input.config.required}
-					type={input.config.type}
-					value={input.config.value}
-				></Input>
-			))}
-		</form>
+		<FormContainer>
+			<div className="form-content">
+				<h1 className="form-title">Welcome to Globilti!</h1>
+				<p className="form-desc">Create your school account</p>
+				<form onSubmit={submitHandler}>
+					{inputArray.map((input) => (
+						<Input
+							key={input.id}
+							id={input.id}
+							label={input.config.label}
+							name={input.id}
+							onChange={(e) => inputChangeHandler(e, input.id)}
+							placeholder={input.config.placeholder}
+							required={input.config.required}
+							type={input.config.type}
+							value={input.config.value}
+						></Input>
+					))}
+				</form>
+			</div>
+		</FormContainer>
 	)
 }
 

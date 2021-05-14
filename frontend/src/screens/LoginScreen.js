@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import Input from '../components/Input'
+import FormContainer from '../components/FormContainer'
 
 const LoginScreen = () => {
 	const [inputFields, setInputFields] = useState({
@@ -8,12 +9,14 @@ const LoginScreen = () => {
 			type: 'email',
 			value: '',
 			placeholder: 'Email Address',
+			label: 'Email',
 			required: true,
 		},
 		password: {
 			type: 'password',
 			value: '',
 			placeholder: 'Password',
+			label: 'Password',
 			required: true,
 		},
 		submit: {
@@ -53,20 +56,27 @@ const LoginScreen = () => {
 		inputArray.push({ id: key, config: inputFields[key] })
 	}
 	return (
-		<form onSubmit={submitHandler}>
-			{inputArray.map((input) => (
-				<Input
-					key={input.id}
-					id={input.id}
-					name={input.id}
-					onChange={(e) => inputChangeHandler(e, input.id)}
-					placeholder={input.config.placeholder}
-					required={input.config.required}
-					type={input.config.type}
-					value={input.config.value}
-				></Input>
-			))}
-		</form>
+		<FormContainer>
+			<div className="form-content">
+				<h1 className="form-title">Login to your Account</h1>
+				<p className="form-desc">Enter your Globiliti credentials </p>
+				<form onSubmit={submitHandler}>
+					{inputArray.map((input) => (
+						<Input
+							key={input.id}
+							id={input.id}
+							label={input.config.label}
+							name={input.id}
+							onChange={(e) => inputChangeHandler(e, input.id)}
+							placeholder={input.config.placeholder}
+							required={input.config.required}
+							type={input.config.type}
+							value={input.config.value}
+						></Input>
+					))}
+				</form>
+			</div>
+		</FormContainer>
 	)
 }
 

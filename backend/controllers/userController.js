@@ -26,7 +26,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route POST /api/users
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
-	const { firstName, lastName, email, password } = req.body
+	const { userName, email, password } = req.body
 
 	const userExists = await User.findOne({ email })
 	if (userExists) {
@@ -35,9 +35,9 @@ const registerUser = asyncHandler(async (req, res) => {
 	}
 
 	const user = await User.create({
-		firstName,
-		lastName,
-		userName: `${firstName} ${lastName}`,
+		firstName: userName.split(' ')[0],
+		lastName: userName.split(' ').splice(1).join(' '),
+		userName,
 		email,
 		password: bcrypt.hashSync(password, 10),
 	})
@@ -74,12 +74,14 @@ const getUserById = asyncHandler(async (req, res) => {
 const updateUserById = asyncHandler(async (req, res) => {
 	const user = await User.findById(req.params.id)
 	if (user) {
-		user.firstName = req.body.firstName || user.firstName
-		user.lastName = req.body.lastName || user.lastName
+		user.firstName = req.body.userName
+			? req.body.userName.split(' ')
+			: user.firstName
+		user.lastName = req.body.userName
+			? req.body.userName.split(' ').splice(1).join(' ')
+			: user.lastName
 		user.email = req.body.email || user.email
-		user.userName = `${req.body.firstName || user.firstName} ${
-			req.body.lastName || user.lastName
-		}`
+		user.userName = req.body.userName || user.userName
 		const updatedUser = await user.save()
 
 		res.json({
