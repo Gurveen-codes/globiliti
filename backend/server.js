@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 
 import connectDB from './config/db.js'
 import errorHandler from './middleware/errorMiddleware.js'
+import userRoutes from './routes/userRoutes.js'
 
 //use environmental variables
 dotenv.config()
@@ -19,6 +20,9 @@ process.env.NODE_ENV === 'development' && app.use(morgan('dev'))
 //Accept form data in request body
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json()) ///Accept json data in req body
+
+//User routes
+app.use('/api/users', userRoutes)
 
 app.get('/', (req, res) => {
 	res.send('Backend API is running')
