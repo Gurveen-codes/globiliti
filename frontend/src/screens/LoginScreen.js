@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import Input from '../components/Input'
 import FormContainer from '../components/FormContainer'
 
@@ -75,6 +76,9 @@ const LoginScreen = () => {
 						></Input>
 					))}
 				</form>
+				<p>
+					New user. <Link to="/">Register</Link>
+				</p>
 			</div>
 		</FormContainer>
 	)
