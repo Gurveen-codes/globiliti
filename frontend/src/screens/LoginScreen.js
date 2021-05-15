@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import Input from '../components/Input'
 import FormContainer from '../components/FormContainer'
 
+toast.configure()
 const LoginScreen = () => {
 	const [inputFields, setInputFields] = useState({
 		email: {
@@ -48,8 +51,20 @@ const LoginScreen = () => {
 		}
 		axios
 			.post('/api/users/login', formData)
-			.then((res) => console.log(res.data))
-			.catch((err) => console.log(err))
+			.then(({ data }) => {
+				toast.dark('Login Successful! Visit Dashboard', {
+					position: toast.POSITION.TOP_CENTER,
+					autoClose: 3000,
+				})
+				localStorage.setItem('token', data.token)
+			})
+			.catch((err) => {
+				console.log(err)
+				toast.error('Login Failed! Try again', {
+					position: toast.POSITION.TOP_CENTER,
+					autoClose: 3000,
+				})
+			})
 	}
 
 	let inputArray = []
