@@ -16,7 +16,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Screenshots
 
-![App Screenshot](https://ibb.co/qYVDy1r)
+![App Screenshot](https://user-images.githubusercontent.com/54614756/118363243-115bcd80-b5b1-11eb-8ad8-955633fe63df.png)
 
 ## Tech Stack
 
