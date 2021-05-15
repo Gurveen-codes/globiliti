@@ -29,7 +29,7 @@ const Dashboard = () => {
 			<DashboardList
 				className="tool-list"
 				Card={ToolCard}
-				numItems={4}
+				numItems={3}
 				header="Tool Pilots"
 				footer="Add new pilot"
 			/>

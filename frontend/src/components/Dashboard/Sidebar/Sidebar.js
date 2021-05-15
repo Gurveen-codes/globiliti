@@ -47,8 +47,12 @@ const Sidebar = () => {
 			</div>
 
 			<div className="sidebar-footer">
-				<div className="sidebar-footer-item">Settings</div>
-				<div className="sidebar-footer-item">Sign-Out</div>
+				<div className="sidebar-footer-item">
+					<i className="fas fa-cog"></i>Settings
+				</div>
+				<div className="sidebar-footer-item">
+					<i className="fas fa-sign-out-alt"></i>Sign-Out
+				</div>
 			</div>
 		</aside>
 	)
