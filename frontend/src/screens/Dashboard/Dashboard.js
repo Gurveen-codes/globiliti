@@ -1,10 +1,10 @@
 import React from 'react'
-import CampaignCard from '../../components/CampaignCard'
-import DashboardList from '../../components/DashboardList/DashboardList'
-import LearningCard from '../../components/LearningCard'
-import Navbar from '../../components/Navbar/Navbar'
-import Sidebar from '../../components/Sidebar/Sidebar'
-import ToolCard from '../../components/ToolCard'
+import CampaignCard from '../../components/Dashboard/CampaignCard'
+import DashboardList from '../../components/Dashboard/DashboardList/DashboardList'
+import LearningCard from '../../components/Dashboard/LearningCard'
+import Navbar from '../../components/Dashboard/Navbar/Navbar'
+import Sidebar from '../../components/Dashboard/Sidebar/Sidebar'
+import ToolCard from '../../components/Dashboard/ToolCard'
 import './dashboard.css'
 
 const Dashboard = () => {

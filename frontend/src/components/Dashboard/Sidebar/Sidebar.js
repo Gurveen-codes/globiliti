@@ -1,6 +1,6 @@
 import React from 'react'
-import titleImage from '../../assets/images/titleImage.png'
-import userImg from '../../assets/images/Oval.png'
+import titleImage from '../../../assets/images/titleImage.png'
+import userImg from '../../../assets/images/Oval.png'
 import './sidebar.css'
 
 const Sidebar = () => {

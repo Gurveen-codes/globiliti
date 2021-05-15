@@ -1,5 +1,5 @@
 import React from 'react'
-import userImg from '../assets/images/Oval.png'
+import userImg from '../../assets/images/Oval.png'
 
 const CampaignCard = () => {
 	return (

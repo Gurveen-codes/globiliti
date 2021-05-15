@@ -1,7 +1,7 @@
 .dashboard {
 	font-size: 14px;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: 0.75fr repeat(3, 1fr);
 	grid-template-rows: min-content 1fr;
 	background-color: #ececec;
 }

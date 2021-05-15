@@ -1,5 +1,5 @@
 import React from 'react'
-import logoImage from '../assets/images/brand-logo.png'
+import logoImage from '../../assets/images/brand-logo.png'
 
 const LearningCard = () => {
 	return (
