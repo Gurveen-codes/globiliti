@@ -38,7 +38,7 @@ const Sidebar = () => {
 						<li key={i} className="sidebar-team-item">
 							<img src={userImg} alt="A user" />
 							<div className="user-detail">
-								<p className="user-name">Patricia M.</p>
+								<p className="user-name">Justin S.</p>
 								<p className="user-desc">Teacher</p>
 							</div>
 						</li>

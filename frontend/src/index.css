@@ -23,6 +23,20 @@ body {
 
 .form-container .title-img {
 	grid-column: 1/-1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.form-container .title-img .dashboard-link {
+	display: inline-block;
+	text-decoration: none;
+	margin-right: 2rem;
+	background-color: hsl(228, 53%, 31%);
+	color: #fff;
+	cursor: pointer;
+	padding: 0.3em 0.5em;
+	border-radius: 5px;
 }
 
 .form-container .banner-img {

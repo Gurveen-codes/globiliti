@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import titleImage from '../assets/images/titleImage.png'
 import bannerImg from '../assets/images/bannerImg.png'
 import bannerLeftImg from '../assets/images/banner-left.png'
@@ -9,6 +10,9 @@ const FormContainer = (props) => {
 		<div className="form-container">
 			<div className="title-img">
 				<img src={titleImage} alt="Globiliti"></img>
+				<Link className="dashboard-link" to="/dashboard">
+					Dashboard
+				</Link>
 			</div>
 			{props.children}
 			<div className="banner-img">
