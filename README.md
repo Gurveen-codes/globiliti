@@ -15,6 +15,11 @@ To run this project, you will need to add the following environment variables to
 `JWT_SECRET` - A secret key to generate JSON web tokens
 
 ## Screenshots
+### Login page
+
+![App Screenshot](https://user-images.githubusercontent.com/54614756/118363308-5bdd4a00-b5b1-11eb-8fa0-00622cc7600a.png)
+
+###  Dashboard page
 
 ![App Screenshot](https://user-images.githubusercontent.com/54614756/118363243-115bcd80-b5b1-11eb-8ad8-955633fe63df.png)
 
