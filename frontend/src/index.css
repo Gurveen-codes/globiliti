@@ -111,3 +111,14 @@ body {
 	text-align: center;
 	border: 1.25px solid #39494c59;
 }
+
+.form-content .input-item {
+	position: relative;
+}
+
+.form-content .input-item i {
+	position: absolute;
+	top: 60%;
+	right: 35%;
+	cursor: pointer;
+}
