@@ -5,6 +5,7 @@ import {
 	registerUser,
 	updateUserById,
 } from '../controllers/userController.js'
+import { protectedRoute } from '../middleware/authMiddleware.js'
 const router = express.Router()
 
 // @desc Register a new user
@@ -20,11 +21,11 @@ router.route('/login').post(loginUser)
 // @desc Get user by ID
 // @route GET /api/users/:id
 // @access Private
-router.route('/:id').get(getUserById)
+router.route('/:id').get(protectedRoute, getUserById)
 
 // @desc   Update user by ID
 // @route  PUT /api/users/:id
 // @access Private
-router.route('/:id').put(updateUserById)
+router.route('/:id').put(protectedRoute, updateUserById)
 
 export default router
