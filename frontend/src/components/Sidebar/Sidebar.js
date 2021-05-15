@@ -13,17 +13,25 @@ const Sidebar = () => {
 
 			<div className="sidebar-menu">
 				<ul>
-					<li className="sidebar-menu-item active">Home</li>
-					<li className="sidebar-menu-item">My Pilots</li>
-					<li className="sidebar-menu-item">Inbox</li>
-					<li className="sidebar-menu-item">My Team</li>
+					<li className="sidebar-menu-item active">
+						<i className="fas fa-home"></i>Home
+					</li>
+					<li className="sidebar-menu-item">
+						<i className="fas fa-paper-plane"></i>My Pilots
+					</li>
+					<li className="sidebar-menu-item">
+						<i className="fas fa-inbox"></i>Inbox
+					</li>
+					<li className="sidebar-menu-item">
+						<i className="fas fa-user-friends"></i>My Team
+					</li>
 				</ul>
 			</div>
 
 			<div className="sidebar-team-list">
 				<div className="team-list-title">
 					<p>Add Team Members</p>
-					<i class="fas fa-plus-circle"></i>
+					<i className="fas fa-plus-circle"></i>
 				</div>
 				<ul>
 					{[...Array(4)].map((_, i) => (

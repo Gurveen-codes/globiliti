@@ -3,11 +3,12 @@
 	flex-direction: column;
 	padding-left: 2em;
 	padding-top: 1.25em;
+	background-color: #fff;
 }
 .navbar ul {
 	list-style: none;
 	display: flex;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 }
 
 .navbar .nav-title {
@@ -25,7 +26,11 @@
 .navbar .nav-menu-item {
 	text-transform: uppercase;
 	line-height: 1.25rem;
+	margin-right: 1.75rem;
+	font-weight: bold;
+	color: #919194;
 }
 .navbar .nav-menu-item.active {
 	border-bottom: 2px solid #131a34;
+	color: #131a34;
 }

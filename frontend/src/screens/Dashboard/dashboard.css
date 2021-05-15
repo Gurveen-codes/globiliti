@@ -1,15 +1,102 @@
 .dashboard {
 	font-size: 14px;
-
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: min-content 1fr;
+	background-color: #ececec;
 }
 
 .sidebar {
 	grid-column: 1 / 2;
+	grid-row: 1/-1;
 }
 
 .navbar {
 	grid-column: 2 / -1;
-	border: 2px solid green;
+	grid-row: 1/2;
+}
+
+.campaign-list {
+	grid-column: 2/3;
+	grid-row: 2/-1;
+}
+
+.learning-list {
+	grid-column: 3/4;
+	grid-row: 2/-1;
+}
+.tool-list {
+	grid-column: 4/5;
+	grid-row: 2/-1;
+}
+
+.card {
+	margin: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	padding: 0.75rem;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 1px 6px #0000001a;
+}
+
+.card .card-title {
+	font-size: 1.125rem;
+	color: #131a34;
+	line-height: 16px;
+	font-weight: 500;
+	margin-bottom: 0.6rem;
+}
+
+.card .card-btn {
+	display: inline-block;
+	background-color: #e9374f;
+	color: #fff;
+	font-size: 0.9rem;
+	width: min-content;
+	padding: 0.2rem 0.5rem;
+	border-radius: 15px;
+	margin-bottom: 0.6rem;
+	white-space: nowrap;
+}
+
+.card .card-flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0.35rem 0;
+	color: #919194;
+}
+
+.card .card-flex i {
+	margin-right: 0.3em;
+}
+
+.card.camp-card .date {
+	position: relative;
+}
+.card.camp-card .date::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(270deg, #e9374f, #fd9a00, #06bf9c);
+	top: calc(100% + 0.3em);
+	border-radius: 2px;
+}
+
+.card.learning-card {
+	flex-direction: row;
+	align-items: center;
+}
+
+.learning-card .learning-card-text {
+	padding-left: 0.5rem;
+}
+.learning-card .learning-card-text p {
+	color: #919194;
+}
+
+.tool-card .card-btn {
+	background-color: #06bf9c;
 }

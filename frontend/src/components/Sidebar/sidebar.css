@@ -26,8 +26,14 @@
 }
 
 .sidebar .sidebar-menu .sidebar-menu-item {
-	margin: 0.5em;
 	cursor: pointer;
+	padding: 0.5em;
+}
+.sidebar .sidebar-menu .sidebar-menu-item.active {
+	background: #323c61;
+}
+.sidebar .sidebar-menu .sidebar-menu-item i {
+	margin-right: 0.5em;
 }
 .sidebar .sidebar-team-list {
 	margin-top: 1em;
@@ -37,6 +43,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	color: #7e849f;
 }
 .sidebar .sidebar-team-list ul {
 	margin-top: 1rem;
@@ -53,6 +60,10 @@
 }
 .sidebar-team-item .user-detail .user-name {
 	font-size: 1.125rem;
+}
+
+.sidebar-team-item .user-detail .user-desc {
+	color: #7e849f;
 }
 
 .sidebar-footer {
