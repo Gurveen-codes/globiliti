@@ -70,7 +70,7 @@ To run this project, you will need to add the following environment variables to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clonehttps://github.com/Gurveen-codes/globiliti.git
    ```
 2. Install NPM packages
    ```sh
@@ -103,7 +103,7 @@ npm start
 
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/Gurveen-codes/globiliti/issues) for a list of proposed features (and known issues).
 
 ## Contributing
 
@@ -117,6 +117,6 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Gurveen Singh - Twitter - [@_Gurveen_](https://twitter.com/_Gurveen_) - Email - gurveen33@outlook.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/Gurveen-codes/globiliti](https://github.com/Gurveen-codes/globiliti)
