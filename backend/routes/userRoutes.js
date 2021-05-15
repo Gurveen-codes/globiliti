@@ -18,14 +18,14 @@ router.route('/').post(registerUser)
 // @access Public
 router.route('/login').post(loginUser)
 
-// @desc Get user by ID
-// @route GET /api/users/:id
+// @desc Get logged in user data
+// @route GET /api/users/profile
 // @access Private
-router.route('/:id').get(protectedRoute, getUserById)
+router.route('/profile').get(protectedRoute, getUserById)
 
-// @desc   Update user by ID
-// @route  PUT /api/users/:id
+/// @desc   Update logged in user data
+// @route  PUT /api/users/profile
 // @access Private
-router.route('/:id').put(protectedRoute, updateUserById)
+router.route('/profile').put(protectedRoute, updateUserById)
 
 export default router

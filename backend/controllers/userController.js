@@ -30,8 +30,9 @@ const loginUser = asyncHandler(async (req, res) => {
 const registerUser = asyncHandler(async (req, res) => {
 	const { userName, email, password } = req.body
 
-	const userExists = await User.findOne({ email })
-	if (userExists) {
+	const emailExists = await User.findOne({ email })
+	const userNameExists = await User.findOne({ userName })
+	if (emailExists || userNameExists) {
 		res.status(400) // Bad request
 		throw new Error('User already exists')
 	}
@@ -57,35 +58,32 @@ const registerUser = asyncHandler(async (req, res) => {
 	}
 })
 
-// @desc Get user by ID
-// @route GET /api/users/:id
+// @desc Get logged in user data
+// @route GET /api/users/profile
 // @access Private
 const getUserById = asyncHandler(async (req, res) => {
-	const user = await User.findById(req.params.id).select('-password')
-	if (user) {
-		res.status(200)
-		res.json(user)
+	if (req.user) {
+		res.json(req.user)
 	} else {
 		res.status(404)
 		throw new Error('User not found')
 	}
 })
 
-// @desc   Update user by ID
-// @route  PUT /api/users/:id
+// @desc   Update logged in user data
+// @route  PUT /api/users/profile
 // @access Private
 const updateUserById = asyncHandler(async (req, res) => {
-	const user = await User.findById(req.params.id)
-	if (user) {
-		user.firstName = req.body.userName
-			? req.body.userName.split(' ')
-			: user.firstName
-		user.lastName = req.body.userName
+	if (req.user) {
+		req.user.firstName = req.body.userName
+			? req.body.userName.split(' ')[0]
+			: req.user.firstName
+		req.user.lastName = req.body.userName
 			? req.body.userName.split(' ').splice(1).join(' ')
-			: user.lastName
-		user.email = req.body.email || user.email
-		user.userName = req.body.userName || user.userName
-		const updatedUser = await user.save()
+			: req.user.lastName
+		req.user.email = req.body.email || req.user.email
+		req.user.userName = req.body.userName || req.user.userName
+		const updatedUser = await req.user.save()
 
 		res.json({
 			_id: updatedUser._id,

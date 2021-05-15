@@ -4,7 +4,7 @@
 }
 
 .dashboard-list:last-of-type {
-	margin-right: 2rem;
+	margin-right: 1.5rem;
 }
 .dashboard-list .list-header {
 	display: flex;

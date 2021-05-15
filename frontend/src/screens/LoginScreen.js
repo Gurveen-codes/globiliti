@@ -37,6 +37,7 @@ const LoginScreen = () => {
 		}
 
 		updatedFormElement.value = e.target.value
+
 		updatedForm[inputIdentifier] = updatedFormElement
 
 		setInputFields(updatedForm)
@@ -45,6 +46,7 @@ const LoginScreen = () => {
 	//Form Submit Handler
 	const submitHandler = (e) => {
 		e.preventDefault()
+
 		const formData = {
 			email: inputFields.email.value,
 			password: inputFields.password.value,
