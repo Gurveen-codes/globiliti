@@ -2,17 +2,10 @@
 
 A Full-Stack project showcasing authentication and design.
 
-## Environment Variables
+## Demo
 
-To run this project, you will need to add the following environment variables to your .env file
+Visit :arrow_right: [Globiliti](https://globiliti1.herokuapp.com/)
 
-`PORT` - Port value to run Node Server
-
-`NODE_ENV` - production or development
-
-`MONGO_URI` - URI to your MongoDb database
-
-`JWT_SECRET` - A secret key to generate JSON web tokens
 
 ## Screenshots
 ### Login page
@@ -23,6 +16,7 @@ To run this project, you will need to add the following environment variables to
 
 ![App Screenshot](https://user-images.githubusercontent.com/54614756/118363243-115bcd80-b5b1-11eb-8ad8-955633fe63df.png)
 
+
 ## Tech Stack
 
 **Client:** React
@@ -30,6 +24,8 @@ To run this project, you will need to add the following environment variables to
 **Server:** Node, Express, Mongoose
 
 **Database:** MongoDB
+
+
 
 ## API Reference
 
@@ -56,6 +52,8 @@ To run this project, you will need to add the following environment variables to
 ```http
   POST /api/users/profile
 ```
+
+
 
 ## Getting Started
 
@@ -84,13 +82,13 @@ To run this project, you will need to add the following environment variables to
   npm i -D concurrently nodemon morgan
   ```
 
-### Running
+### Running locally
 
 1. To run Node-Express Server
 
-```sh
-npm start
-```
+    ```sh
+    npm start
+    ```
 
 2. To run client-side React Project
    ```sh
@@ -100,10 +98,25 @@ npm start
    ```sh
    npm run dev
    ```
+   
+   
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file
+
+`PORT` - Port value to run Node Server
+
+`NODE_ENV` - production or development
+
+`MONGO_URI` - URI to your MongoDb database
+
+`JWT_SECRET` - A secret key to generate JSON web tokens
+
 
 ## Roadmap
 
 See the [open issues](https://github.com/Gurveen-codes/globiliti/issues) for a list of proposed features (and known issues).
+
 
 ## Contributing
 
