@@ -1,3 +1,4 @@
+import path from 'path'
 import express from 'express'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
@@ -17,17 +18,29 @@ connectDB()
 
 //use morgan logger in development mode
 process.env.NODE_ENV === 'development' && app.use(morgan('dev'))
+
 //Accept form data in request body
 app.use(bodyParser.urlencoded({ extended: true }))
+
 ///Accept json data in req body
-app.use(express.json()) 
+app.use(express.json())
 
 //User routes
 app.use('/api/users', userRoutes)
 
-app.get('/', (req, res) => {
-	res.send('Backend API is running')
-})
+//Serve frontend build folder as static in production
+if (process.env.NODE_ENV === 'production') {
+	const __dirname = path.resolve()
+	app.use(express.static(path.join(__dirname, '/frontend/build')))
+
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
+	})
+} else {
+	app.get('/', (req, res) => {
+		res.send('Backend API is running')
+	})
+}
 
 //Middleware to catch all errors
 app.use(errorHandler)
